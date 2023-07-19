@@ -1,9 +1,12 @@
-import React from 'react';
+import React ,{useState}from 'react';
 import {Text, View, StyleSheet, TouchableOpacity, SafeAreaView, FlatList, ScrollView, TextInput} from 'react-native';
 import Messagesitem from './Messageitem';
 import {dummymessages} from '../Data/Messagesdata';
 import Chatitem from './Chatitem';
 export default function Messages() {
+    const [inboxuserid,setInboxuserid]=useState(1);
+
+
     return (
         <SafeAreaView style={Mystyles.messagesview}>
             <View style={Mystyles.headerview}>
@@ -15,7 +18,7 @@ export default function Messages() {
                 <FlatList
                     data={dummymessages}
 
-                    renderItem={({item}) => {return (<Messagesitem item={item} />)}}
+                    renderItem={({item}) => {return (<Messagesitem item={item} usersetter={setInboxuserid} inboxuserid={inboxuserid} />)}}
                     keyExtractor={(item) => {return (item.Id)}}
                     horizontal={true}
                     showsHorizontalScrollIndicator={false}
@@ -26,10 +29,10 @@ export default function Messages() {
             <View style={Mystyles.chatboxview}>
                 <View style={Mystyles.flatlistconatinerview}>
                     <FlatList
-                        data={dummymessages}
+                        data={dummymessages[inboxuserid -1 ].Message}
                         showsVerticalScrollIndicator={false}
                         renderItem={({item}) => {return (<Chatitem item={item} />)}}
-                        keyExtractor={(item) => {return (item.Id)}}
+                        keyExtractor={(item) => {return (item)}}
                     />
                 </View>
                 <View style={Mystyles.sendconatinerview}>
@@ -53,7 +56,8 @@ const Mystyles = StyleSheet.create({
     flatlistconatinerview: {flex: 1, marginHorizontal: 15},
     sendconatinerview: {
         flexDirection: "row", marginBottom: 10, alignItems: "center", paddingHorizontal: 30,
-        borderColor: "#f5fff5", borderWidth: 1, borderRadius: 25, marginHorizontal: 10, backgroundColor: "#f5fff5", paddingVertical: 10
+        borderColor: "#f5fff5", borderWidth: 1, borderRadius: 25, marginHorizontal: 10, backgroundColor: "#f5fff5", 
+        paddingVertical: 10
 
 
     },

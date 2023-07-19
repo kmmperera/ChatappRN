@@ -11,29 +11,20 @@ function CustomDrawer(props) {
                 contentContainerStyle={DrawerStyle.contentContainer}
             >
 
-                <ImageBackground
-                    source={require('../assets/drawerbg.jpeg')}
-                    style={DrawerStyle.imageBackground}>
+                <View style={DrawerStyle.topview}>
+                   
 
                     <Image
                         source={require('../assets/nopic.png')}
                         style={DrawerStyle.profilePic}
                     />
 
-                    <Text
-                        style={DrawerStyle.profileName}>
+                    <Text style={DrawerStyle.nametext}>
                         John Doe
                     </Text>
 
-                    <View style={DrawerStyle.coinsView}>
-                        <Text
-                            style={DrawerStyle.coinsText}
-                        >
-                            280 Coins
-                        </Text>
-                        <Ionicons name="home" size={14} color="#fff" />
-                    </View>
-                 </ImageBackground>
+                    
+                 </View>
                 <View style={DrawerStyle.drawerList}>
                     <DrawerItemList {...props} />
                 </View>
@@ -54,7 +45,7 @@ function CustomDrawer(props) {
                     <View style={DrawerStyle.bottomNavs}>
                         <Ionicons name="exit-outline" size={22} />
                         <Text
-                            style={DrawerStyle.bottomNavtexts}>
+                            style={[DrawerStyle.bottomNavtexts,DrawerStyle.signouttext]}>
                             Sign Out
                             </Text>
                     </View>
@@ -68,6 +59,8 @@ const DrawerStyle = StyleSheet.create({
 
     container: {flex: 1},
     imageBackground: {padding: 20},
+    topview:{paddingTop:40,flex:1,marginBottom:20,justifyContent:"center",alignItems:"center",},
+    nametext:{fontSize:16,fontWeight:700},
     contentContainer: {paddingTop:0},
     profilePic: {height: 80, width: 80, borderRadius: 40, marginBottom: 10},
     profileName: {color: '#fff', fontSize: 18, marginBottom: 5, },
@@ -78,6 +71,7 @@ const DrawerStyle = StyleSheet.create({
     touchableOpacity: {paddingVertical: 15},
     bottomNavs: {flexDirection: 'row', alignItems: 'center'},
     bottomNavtexts: {fontSize: 15, marginLeft: 5, },
+    signouttext:{color:"#35b870"}
 
 });
 

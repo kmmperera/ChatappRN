@@ -5,7 +5,8 @@ export const dummymessages = [
         Sender: "Lisa",
         Receiver: "2423442",
         Message:[ "Hello how are u?","you too","I l be late ","take care"],
-        Profilepic:require("../assets/propic1.jpg")
+        Profilepic:require("../assets/propic1.jpg"),
+      
     },
 
     {
@@ -68,7 +69,7 @@ export const dummymessages = [
         Id: 9,
         Sender: "Adam",
         Receiver: "90909089089",
-        Message: ["Im fine dear","good night ","i miss u much ","you are the apple of my eye","coz we never did ","I wanna make you now right now"],
+        Message: ["Im fine dear","good night ","i miss u much ","heyyy you are the apple of my eye","coz we never did ","I wanna make you now right now"],
         Profilepic:require("../assets/propic10.jpg")
     },
 ];

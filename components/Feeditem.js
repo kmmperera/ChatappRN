@@ -1,11 +1,12 @@
 import React from 'react';
 import {Text, View, StyleSheet, TouchableOpacity, Image} from 'react-native';
 import {EvilIcons} from "@expo/vector-icons";
-
+import { useNavigation } from "@react-navigation/native";
 
 export default function Feeditem({item}) {
+    const navigation =useNavigation();
     return (
-        <TouchableOpacity onPress={() => {}}>
+        <TouchableOpacity onPress={() => {navigation.navigate("Postdetails",{item})}}>
             <View style={Mystyles.feedconatiner}>
 
                 <View style={Mystyles.feeditemview}>

@@ -8,7 +8,7 @@ export const dummypostdata = [
         Date: '2023 - 04 - 22',
         Comments: [
             {Commentedby: '234342234', Comment: "A new comment", Date: '2023 - 05 - 02'},
-            {Commentedby: '676756', Comment: "another comment", Date: '2023 - 05 - 05'}
+            {Commentedby: '676756', Comment: "another comment another comment another comment another comment another comment another comment", Date: '2023 - 05 - 05'}
 
         ],
         Likes: [

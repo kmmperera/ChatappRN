@@ -18,7 +18,8 @@ import Feed from '../components/Feed';
 import Followings from '../components/Followings';
 import Followers from '../components/Followers';
 import Messages from '../components/Messages';
-
+import Postdetails from '../components/Postdetails';
+import Createpost from '../components/Createpost';
 
 const Wrapperstack = createNativeStackNavigator();
 const Stacknav = createNativeStackNavigator();
@@ -30,10 +31,11 @@ function Wrapperstackfunc() {
 
     return (
         <Wrapperstack.Navigator
-        screenOptions={{
+            screenOptions={{
 
-            headerShown: false,}}
-        
+                headerShown: false,
+            }}
+
         >
             < Wrapperstack.Screen
                 name="Frontpage"
@@ -70,7 +72,7 @@ function Drawerfunc() {
 
                 headerShown: false,
 
-                drawerActiveBackgroundColor: '#aa18ea',
+                drawerActiveBackgroundColor: '#35b870',
                 drawerActiveTintColor: '#fff',
                 drawerInactiveTintColor: '#333',
                 drawerLabelStyle: {
@@ -111,6 +113,8 @@ function Stacknavfunc() {
     return (
         <Stacknav.Navigator screenOptions={{headerShown: false}}>
             < Stacknav.Screen name="Bottomtabs" component={Bottomtabnavfunc} />
+            < Stacknav.Screen name="Postdetails" component={Postdetails} />
+            < Stacknav.Screen name="Createpost" component={Createpost} />
         </Stacknav.Navigator>
 
     );
@@ -155,7 +159,7 @@ function Bottomtabnavfunc({navigation}) {
                     }
                 }}
             />
-            < Bottomtabnav.Screen name="Messages" component={Messages} options={{headerShown:false}} />
+            < Bottomtabnav.Screen name="Messages" component={Messages} options={{headerShown: false}} />
         </Bottomtabnav.Navigator>
     );
 }
@@ -164,19 +168,19 @@ function Toptabnavfunc() {
     return (
 
         <Toptabnav.Navigator screenOptions={{
-            
+
             headerShown: false,
             tabBarLabelStyle: {
                 textTransform: "capitalize",
                 fontWeight: "bold",
-              },
-              tabBarIndicatorStyle: {
+            },
+            tabBarIndicatorStyle: {
                 height: 5,
                 borderRadius: 5,
                 backgroundColor: "#35b870",
-              },
-            
-            }}>
+            },
+
+        }}>
             < Toptabnav.Screen name="Feed" component={Feed} />
             < Toptabnav.Screen name="Followers" component={Followers} />
             < Toptabnav.Screen name="Followings" component={Followings} />
