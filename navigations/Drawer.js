@@ -20,6 +20,7 @@ import Followers from '../components/Followers';
 import Messages from '../components/Messages';
 import Postdetails from '../components/Postdetails';
 import Createpost from '../components/Createpost';
+import Profile from '../components/Profile';
 
 const Wrapperstack = createNativeStackNavigator();
 const Stacknav = createNativeStackNavigator();
@@ -83,7 +84,7 @@ function Drawerfunc() {
 
         >
             < Drawernav.Screen
-                name="Stacknavs"
+                name="Home"
                 component={Stacknavfunc}
                 options={{
 
@@ -93,8 +94,8 @@ function Drawerfunc() {
                 }}
             />
             < Drawernav.Screen
-                name="Post"
-                component={Dummy}
+                name="Profile"
+                component={Profile}
                 options={{
 
                     drawerIcon: ({color}) => (

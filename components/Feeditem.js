@@ -3,8 +3,9 @@ import {Text, View, StyleSheet, TouchableOpacity, Image} from 'react-native';
 import {EvilIcons} from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
-export default function Feeditem({item}) {
+export default function Feeditem({item,fromprofile}) {
     const navigation =useNavigation();
+    const propicurl= require("../assets/nopic.png");
     return (
         <TouchableOpacity onPress={() => {navigation.navigate("Postdetails",{item})}}>
             <View style={Mystyles.feedconatiner}>
@@ -13,13 +14,13 @@ export default function Feeditem({item}) {
                     <View style={Mystyles.propicwreapper}>
                         <Image
                             style={Mystyles.profileimg}
-                            source={item.Profilepic}
+                            source={fromprofile ? propicurl : item.Profilepic}
 
 
                         />
                     </View>
                     <View style={Mystyles.postcontentwrapper}>
-                        <Text style={Mystyles.postedby}>{item.Postedby}</Text>
+                        <Text style={Mystyles.postedby}>{fromprofile ? "John Doe" : item.Postedby}</Text>
 
                         <Text style={Mystyles.postcontenttext}>{item.Content}</Text>
                         <View style={Mystyles.iconview}>
